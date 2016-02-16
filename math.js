@@ -7,27 +7,24 @@ if (args.length < 2) {
 	console.log("missing args");
 }
 else {
-	console.log(calculate());
+	var total = args.reduce(calculate);
+	console.log(total);
 }
 
-function calculate() {
-	var total = parseFloat(args[0]);
-	for (var i = 1; i < args.length; i++) {	
-		if(operator == 'add') {
-			total += parseFloat(args[i]);
-		}
-		else if(operator == 'multiply') {
-			total *= parseFloat(args[i]);
-		}
-		else if(operator == 'subtract') {
-			total -= parseFloat(args[i]);
-		}
-		else if(operator == 'divide') {
-			total /= parseFloat(args[i]);
-		}
-		else {
-			return "invalid operator: " + operator;
-		}
-	};
-	return total;
-}
+function calculate(a, b) {
+	if(operator == 'add') {
+		return parseFloat(a) + parseFloat(b);
+	}
+	else if(operator == 'multiply') {
+		return parseFloat(a) * parseFloat(b);
+	}
+	else if(operator == 'subtract') {
+		return parseFloat(a) - parseFloat(b);	
+	}
+	else if(operator == 'divide') {
+		return parseFloat(a) / parseFloat(b);
+	}
+	else {
+		return "invalid operator: " + operator;
+	}
+};
