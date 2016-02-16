@@ -7,8 +7,7 @@ if (args.length < 2) {
 	console.log("missing args");
 }
 else {
-	var total = args.reduce(calculate);
-	console.log(total);
+	console.log(args.reduce(calculate));
 }
 
 function calculate(a, b) {
@@ -27,4 +26,4 @@ function calculate(a, b) {
 	else {
 		return "invalid operator: " + operator;
 	}
-};
+}
