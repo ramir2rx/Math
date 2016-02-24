@@ -1,17 +1,16 @@
 #!/usr/bin/env node
-var args = process.argv.slice(2);
-var operator = args[0].toLowerCase();
-args = args.slice(1);
+// var args = process.argv.slice(2);
+// var operator = args[0].toLowerCase();
+// args = args.slice(1);
 
 
-if (args.length < 2) {
-	console.log("missing args");
-}
-else {
-	console.log(args.reduce(calculate));
-}
-
-function calculate(a, b) {
+// if (args.length < 2) {
+// 	console.log("missing args");
+// }
+// else {
+// 	console.log(args.reduce(calculate));
+// }
+exports.calculate = function (a, b) {
 	if(operator == 'add') {
 		return +a + +b;
 	}
@@ -28,3 +27,4 @@ function calculate(a, b) {
 		return "invalid operator: " + operator;
 	}
 }
+
